@@ -1,5 +1,21 @@
 <footer>
- <p>Test</p>
+    <p id="copyright"></p>
+
+    <ul class="footer_links">
+        <li><a href="https://www.instagram.com/lowkey__019/"><img id="instagram-logo"></a></li>
+        <li><a href="https://www.linkedin.com/in/aditya-chouhan-09892b245/"><img id="linkedin-logo"></a></li>
+    </ul>
+</footer>
+
+<script>
+    const copyright = `
+    <p>
+      Copyright &copy; ${new Date().getFullYear()} Aditya Chouhan
+    </p>
+  `;
+
+    document.getElementById('copyright').innerHTML = copyright;
+</script>
 </body>
 
 </html>
