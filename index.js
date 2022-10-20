@@ -3,10 +3,11 @@ File name: index.js
 Creator: Aditya Chouhan
 Student ID: 301215583
 Date : 16 October; 2022
-*/ 
+*/
 
-const app = require('./config/server');
+//Importing main server file
+const app = require("./config/server");
 
-
-const PORT = (process.env.PORT || 3001);
+//Port setup
+const PORT = process.env.PORT || 3003;
 app.listen(PORT);
