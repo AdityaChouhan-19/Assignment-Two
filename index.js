@@ -9,5 +9,5 @@ Date : 16 October; 2022
 const app = require("./config/server");
 
 //Port setup
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT);

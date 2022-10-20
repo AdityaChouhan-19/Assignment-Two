@@ -7,7 +7,7 @@ const router = express.Router();
 const Contact = require("../models/contacts");
 
 module.exports.displayContactList = (req, res, next) => {
-  Contact.find((err, contcatList) => {
+  Contact.find().sort({contactname:1}).exec((err, contcatList) => {
     if (err) {
       return console.error(err);
     } else {
@@ -61,7 +61,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
   let id = req.params.id;
 
-  Contact.remove({ _id: id }, (err) => {
+  Contact.deleteOne({ _id: id }, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
