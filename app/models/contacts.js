@@ -1,16 +1,15 @@
 const mongoose = require("mongoose");
 
+//Contact model
 const contactModel = mongoose.Schema(
   {
-    name: String,
-    author: String,
-    published: String,
-    description: String,
-    price: Number,
+    contactname: String,
+    contactnumber: String,
+    contactemail: String,
   },
   {
     collection: "contacts",
   }
 );
 
-module.exports = mongoose.model("contacts", contactModel);
+module.exports = mongoose.model("contact", contactModel);

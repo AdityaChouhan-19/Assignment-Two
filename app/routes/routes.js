@@ -6,22 +6,24 @@ Date : 16 October; 2022
 */
 
 const express = require("express");
-const routes = express.Router();
+const router = express.Router();
 
 //Import controllerRoutes
 const controllerRoutes = require("../controllers/controllers");
 
-routes.get("/", controllerRoutes.landingPage);
+router.get("/", controllerRoutes.landingPage);
 
-routes.get("/homepage", controllerRoutes.landingPage);
+router.get("/homepage", controllerRoutes.landingPage);
 
-routes.get("/services", controllerRoutes.services);
+router.get("/services", controllerRoutes.services);
 
-routes.get("/projects", controllerRoutes.projects);
+router.get("/projects", controllerRoutes.projects);
 
-routes.get("/about", controllerRoutes.about);
+router.get("/about", controllerRoutes.about);
 
-routes.get("/contact", controllerRoutes.contact);
+router.get("/contact", controllerRoutes.contact);
 
-//Export routes
-module.exports = routes;
+router.get("/", controllerRoutes.landingPage);
+
+//Export router
+module.exports = router;
