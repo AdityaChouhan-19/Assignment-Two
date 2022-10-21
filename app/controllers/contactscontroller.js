@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-//const mongoose = require("mongoose");
-
 //Connect to the contacts model
 const Contact = require("../models/contacts");
 
@@ -13,7 +11,6 @@ module.exports.displayContactList = (req, res, next) => {
       if (err) {
         return console.error(err);
       } else {
-        //console.log(ContcatList);
         res.render("contacts/contactlist", {
           title: "Contact List",
           ContactList: contcatList,

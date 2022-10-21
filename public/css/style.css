@@ -229,3 +229,13 @@ button:hover{
     justify-content:space-around;
     display: flex;
 }
+
+.content-form {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #ED944D;
+    padding: 20px;
+}
