@@ -68,11 +68,11 @@ const userModel = require("../app/models/user");
 const user = userModel.user;
 
 //Implement a User Authentication Strategy
-//passport.use(user.createStrategy());
+passport.use(user.createStrategy());
 
 // //Encrypt and dcrypt user info
-// passport.serializeUser(user.serializeUser());
-// passport.deserializeUser(user.deserializeUser());
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
 
 //Middleware for routes
 app.use("/", router);

@@ -7,17 +7,19 @@ const router = express.Router();
 const Contact = require("../models/contacts");
 
 module.exports.displayContactList = (req, res, next) => {
-  Contact.find().sort({contactname:1}).exec((err, contcatList) => {
-    if (err) {
-      return console.error(err);
-    } else {
-      //console.log(ContcatList);
-      res.render("contacts/contactlist", {
-        title: "Contact List",
-        ContactList: contcatList,
-      });
-    }
-  });
+  Contact.find()
+    .sort({ contactname: 1 })
+    .exec((err, contcatList) => {
+      if (err) {
+        return console.error(err);
+      } else {
+        //console.log(ContcatList);
+        res.render("contacts/contactlist", {
+          title: "Contact List",
+          ContactList: contcatList,
+        });
+      }
+    });
 };
 
 module.exports.displayEditPage = (req, res, next) => {

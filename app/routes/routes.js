@@ -8,22 +8,30 @@ Date : 16 October; 2022
 const express = require("express");
 const router = express.Router();
 
-//Import controllerRoutes
-const controllerRoutes = require("../controllers/controllers");
+//Import indexcontroller
+const indexcontroller = require("../controllers/controllers");
 
-router.get("/", controllerRoutes.landingPage);
+router.get("/", indexcontroller.landingPage);
 
-router.get("/homepage", controllerRoutes.landingPage);
+router.get("/homepage", indexcontroller.landingPage);
 
-router.get("/services", controllerRoutes.services);
+router.get("/services", indexcontroller.services);
 
-router.get("/projects", controllerRoutes.projects);
+router.get("/projects", indexcontroller.projects);
 
-router.get("/about", controllerRoutes.about);
+router.get("/about", indexcontroller.about);
 
-router.get("/contact", controllerRoutes.contact);
+router.get("/contact", indexcontroller.contact);
 
-router.get("/", controllerRoutes.landingPage);
+router.get("/login", indexcontroller.displayLoginPage);
+
+router.post("/login", indexcontroller.processLoginPage);
+
+router.get("/register", indexcontroller.displayRegisterPage);
+
+router.post("/register", indexcontroller.processRegisterPage);
+
+router.get("/logout", indexcontroller.performLogout);
 
 //Export router
 module.exports = router;

@@ -21,6 +21,12 @@ let user = mongoose.Schema(
       trim: true,
       required: "email address is required",
     },
+    displayName: {
+      type: String,
+      default: "",
+      trim: true,
+      required: "Display Name is required",
+    },
   },
   {
     collection: "users",
@@ -28,8 +34,8 @@ let user = mongoose.Schema(
 );
 
 //Configure options for User Model
-let options = ({ missingPasswordError: "Wrong / Missing Password" });
+let options = { missingPasswordError: "Wrong / Missing Password" };
 
 user.plugin(passportLocalMongoose, options);
 
-module.exports = mongoose.model("user", user);
+module.exports.user = mongoose.model("user", user);
