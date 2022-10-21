@@ -25,7 +25,7 @@ const contactsRouter = require("../app/routes/contactsroutes");
 const mongoose = require("mongoose");
 
 //Connect mongoose to the env URI
-mongoose.connect(process.env.URI, {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
