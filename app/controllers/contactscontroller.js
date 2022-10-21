@@ -22,25 +22,23 @@ module.exports.displayContactList = (req, res, next) => {
     });
 };
 
-module.exports.displayEditPage = (req, res, next) => {
+module.exports.displayUpdatePage = (req, res, next) => {
   let id = req.params.id;
 
-  Contact.findById(id, (err, contactToEdit) => {
+  Contact.findById(id, (err, contactToUpdate) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
-      //show the edit view
       res.render("contacts/update", {
-        title: "Edit Contact",
-        contact: contactToEdit,
-        //displayName: req.user ? req.user.displayName : "",
+        title: "Update Contact",
+        contact: contactToUpdate,
       });
     }
   });
 };
 
-module.exports.processEditPage = (req, res, next) => {
+module.exports.processUpdatePage = (req, res, next) => {
   let id = req.params.id;
 
   let updatedContact = Contact({
