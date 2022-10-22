@@ -7,13 +7,13 @@ const Contact = require("../models/contacts");
 module.exports.displayContactList = (req, res, next) => {
   Contact.find()
     .sort({ contactname: 1 })
-    .exec((err, contcatList) => {
+    .exec((err, contactList) => {
       if (err) {
         return console.error(err);
       } else {
         res.render("contacts/contactlist", {
           title: "Contact List",
-          ContactList: contcatList,
+          ContactList: contactList,
         });
       }
     });
