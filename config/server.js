@@ -33,7 +33,7 @@ mongoose.connect(process.env.MONGO_URI, {
 const mongodb = mongoose.connection;
 mongodb.on("error", console.error.bind(console, "Connection Error:"));
 mongodb.once("open", () => {
-  console.log("Connected to MongoDB....");
+  console.log("Connected to MongoDB...");
 });
 
 //Morgan setup
