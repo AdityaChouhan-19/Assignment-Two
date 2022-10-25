@@ -5,28 +5,23 @@ const copyright = `
   Copyright &copy; ${new Date().getFullYear()} Aditya Chouhan
 </p>`;
 
-document.getElementById('copyright').innerHTML = copyright;
+document.getElementById("copyright").innerHTML = copyright;
 
-(function(){
+(function () {
+  function Start() {
+    console.log("App Started...");
 
-    function Start()
-    {
-        console.log("App Started...");
+    let deleteButtons = document.querySelectorAll(".delete");
 
-        let deleteButtons = document.querySelectorAll('.delete');
-        
-        for(button of deleteButtons)
-        {
-            button.addEventListener('click', (event)=>{
-                if(!confirm("Are you sure? This contact will permanently delete.")) 
-                {
-                    event.preventDefault();
-                    window.location.assign('/contactlist');
-                }
-            });
+    for (button of deleteButtons) {
+      button.addEventListener("click", (event) => {
+        if (!confirm("Are you sure? This contact will permanently delete.")) {
+          event.preventDefault();
+          window.location.assign("/contactlist");
         }
+      });
     }
+  }
 
-    window.addEventListener("load", Start);
-
+  window.addEventListener("load", Start);
 })();
