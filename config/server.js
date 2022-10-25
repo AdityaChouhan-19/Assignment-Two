@@ -24,11 +24,19 @@ const contactsRouter = require("../app/routes/contactsroutes");
 //Mongoose setup
 const mongoose = require("mongoose");
 
-//Connect mongoose to the env URI
-mongoose.connect(process.env.MONGO_URI, {
+const db = require("./mongodb");
+
+//Connect mongoose to mongodb
+mongoose.connect(db.URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+// //Connect mongoose to the env URI
+// mongoose.connect(process.env.MONGO_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 const mongodb = mongoose.connection;
 mongodb.on("error", console.error.bind(console, "Connection Error:"));
